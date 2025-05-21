@@ -243,14 +243,14 @@ document.addEventListener('DOMContentLoaded', () => {
         if (theme === 'dark-theme') {
             body.classList.add('dark-theme');
             localStorage.setItem('theme', 'dark-theme');
-            themeIcon.classList.remove('fa-moon');
-            themeIcon.classList.add('fa-sun');
+            themeIcon.classList.remove('fa-sun');
+            themeIcon.classList.add('fa-moon');
             if (siteLogo) siteLogo.src = logoDarkPath; // Змінюємо логотип на темний
         } else {
             body.classList.remove('dark-theme');
             localStorage.setItem('theme', 'light-theme');
-            themeIcon.classList.remove('fa-sun');
-            themeIcon.classList.add('fa-moon');
+            themeIcon.classList.remove('fa-moon');
+            themeIcon.classList.add('fa-sun');
             if (siteLogo) siteLogo.src = logoLightPath; // Змінюємо логотип на світлий
         }
     }
