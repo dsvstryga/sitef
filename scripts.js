@@ -235,7 +235,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const siteLogo = document.getElementById('site-logo'); // Отримуємо елемент логотипу
 
     // Шляхи до логотипів
-    const logoLightPath = 'images/logob.png';
+    const logoLightPath = 'images/logow.png';
     const logoDarkPath = 'images/logow.png';
 
     // Функція для встановлення теми та логотипу
