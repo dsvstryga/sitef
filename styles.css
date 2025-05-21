@@ -1,29 +1,33 @@
 /* Загальні стилі та CSS-змінні для тем */
 :root {
-    /* Світла тема (за замовчуванням): М'яка кремова палітра */
-    --primary-color: #7A9B9F; /* М'який сіро-зелений */
-    --secondary-color: #8C8C8C; /* Середній сірий */
-    --accent-color: #C2B280; /* Теплий золотисто-бежевий */
-    --text-color: #4A4A4A; /* Темний, але не різкий сірий для основного тексту */
-    --background-color: #FCF8F0; /* Дуже світлий кремовий фон (трохи жовтуватий) */
-    --card-background: #FFFFFF; /* Чистий білий для карток (для контрасту з фоном) */
-    --border-color: #E6E1D3; /* Світлий бежевий для розділення */
+    /* Світла тема: "Чиста Лабораторія" */
+    --primary-color: #007BFF; /* Яскраво-синій */
+    --secondary-color: #6c757d; /* Світлий сірий */
+    --accent-color: #28a745; /* Свіжий зелений */
+    --text-color: #343a40; /* Темно-сірий для основного тексту */
+    --background-color: #f8f9fa; /* Дуже світлий сіро-білий фон */
+    --card-background: #ffffff; /* Чистий білий для карток */
+    --border-color: #e9ecef; /* Дуже світлий сірий для розділення */
+    --shadow-color: rgba(0, 0, 0, 0.08); /* М'яка тінь */
 
     --white-color: #ffffff;
     --black-color: #000000;
-    --border-radius: 5px;
-    --transition-speed: 0.3s; /* Швидкість переходу для плавності */
+    --border-radius: 8px; /* Більш виражений радіус */
+    --transition-speed: 0.4s; /* Збільшимо швидкість для плавності */
+    --font-heading: 'Aldrich', sans-serif; /* Футуристичний шрифт для заголовків */
+    --font-body: 'Roboto', sans-serif; /* Читабельний шрифт для тексту */
 }
 
 body.dark-theme {
-    /* Темна тема: Глибока та Спокійна */
-    --primary-color: #8DA9C2; /* Трохи світліший синій для акцентів, щоб добре читався на темному */
-    --secondary-color: #9BAEC1; /* Середній світло-сірий для додаткового тексту */
-    --accent-color: #B4D4B1; /* М'який зелений для акцентів */
-    --text-color: #E2E8F0; /* Дуже світлий текст для хорошого контрасту */
-    --background-color: #1A202C; /* Дуже глибокий темно-синій/сірий фон */
-    --card-background: #2D3748; /* Трохи світліший, але все ще темний фон для карток */
-    --border-color: #4A5568; /* Темний бордер для розділення */
+    /* Темна тема: "Кіберпанк Ніч" */
+    --primary-color: #00FFFF; /* Неоновий блакитний */
+    --secondary-color: #B0B0B0; /* Світліший сірий для додаткового тексту */
+    --accent-color: #FF00FF; /* Електричний пурпурний */
+    --text-color: #E0E0E0; /* Дуже світлий текст для темного фону */
+    --background-color: #1a1a2e; /* Дуже темний баклажановий/чорний фон */
+    --card-background: #2a2a4a; /* Трохи світліший, але все ще темний фон для карток */
+    --border-color: #4a4a6e; /* Темний, насичений бордер */
+    --shadow-color: rgba(0, 0, 0, 0.4); /* Глибока тінь */
 }
 
 /* --- НОВА ВЛАСТИВІСТЬ ДЛЯ ПЛАВНОЇ ПРОКРУТКИ --- */
@@ -32,7 +36,7 @@ html {
 }
 /* --- КІНЕЦЬ НОВОЇ ВЛАСТИВОСТІ --- */
 
-/* Решта CSS-коду залишається без змін */
+/* Загальні стилі та шрифти */
 * {
     margin: 0;
     padding: 0;
@@ -40,8 +44,8 @@ html {
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
+    font-family: var(--font-body);
+    line-height: 1.7; /* Збільшимо міжрядковий інтервал */
     color: var(--text-color);
     background-color: var(--background-color);
     overflow-x: hidden;
@@ -51,7 +55,7 @@ body {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 25px; /* Збільшимо відступи по боках */
 }
 
 a {
@@ -62,6 +66,7 @@ a {
 
 a:hover {
     color: var(--accent-color);
+    text-shadow: 0 0 5px var(--accent-color); /* Ефект світіння */
 }
 
 img {
@@ -73,12 +78,13 @@ img {
 /* Шапка сайту */
 .header {
     background-color: var(--card-background);
-    padding: 15px 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px 0; /* Збільшимо відступи */
+    box-shadow: 0 4px 15px var(--shadow-color); /* Більш виражена тінь */
     position: sticky;
     top: 0;
     z-index: 1000;
     transition: background-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    border-bottom: 1px solid var(--border-color); /* Чіткий роздільник */
 }
 
 .header .container {
@@ -89,13 +95,25 @@ img {
 }
 
 .logo img {
-    height: 50px;
+    height: 60px; /* Збільшимо розмір лого */
     transition: transform var(--transition-speed) ease;
 }
 
 .logo img:hover {
-    transform: scale(1.05);
+    transform: scale(1.08);
 }
+
+/* Змінимо логотип для темної теми */
+body.dark-theme .logo img#site-logo {
+    content: url('images/logow.png'); /* Припустимо, у вас є білий логотип */
+    filter: brightness(1.2) drop-shadow(0 0 5px var(--primary-color)); /* Світіння для темної теми */
+}
+
+/* Для світлої теми, якщо потрібно окремий логотип */
+body:not(.dark-theme) .logo img#site-logo {
+    content: url('images/logob.png'); /* Припустимо, у вас є чорний логотип */
+}
+
 
 /* Меню */
 .main-menu .menu-list {
@@ -104,25 +122,27 @@ img {
 }
 
 .main-menu .menu-list li {
-    margin-left: 30px;
+    margin-left: 35px; /* Збільшимо відступ */
 }
 
 .main-menu .menu-list a {
-    font-weight: bold;
-    font-size: 1.1em;
-    padding: 5px 0;
+    font-family: var(--font-heading); /* Шрифт для меню */
+    font-weight: 600;
+    font-size: 1.15em; /* Трохи більший шрифт */
+    padding: 8px 0;
     position: relative;
     transition: color var(--transition-speed) ease;
     color: var(--text-color);
+    text-transform: uppercase; /* Великі літери */
 }
 
 .main-menu .menu-list a::after {
     content: '';
     position: absolute;
-    bottom: 0;
+    bottom: -5px; /* Опустимо підкреслення */
     left: 0;
     width: 0;
-    height: 2px;
+    height: 3px; /* Товстіше підкреслення */
     background-color: var(--primary-color);
     transition: width var(--transition-speed) ease;
 }
@@ -135,7 +155,7 @@ img {
     display: none;
     background: none;
     border: none;
-    font-size: 1.8em;
+    font-size: 2em; /* Більша іконка */
     cursor: pointer;
     color: var(--text-color);
     transition: color var(--transition-speed) ease;
@@ -145,33 +165,33 @@ img {
 .theme-toggle {
     background: none;
     border: none;
-    font-size: 1.5em;
+    font-size: 1.8em; /* Більша іконка */
     cursor: pointer;
-    color: var(--text-color);
-    margin-left: 20px;
+    color: var(--primary-color); /* Колір як акцент */
+    margin-left: 25px;
     transition: color var(--transition-speed) ease, transform var(--transition-speed) ease;
 }
 
 .theme-toggle:hover {
-    color: var(--primary-color);
-    transform: scale(1.1);
+    color: var(--accent-color);
+    transform: scale(1.2) rotate(15deg); /* Більш виражений ефект */
 }
 
 /* Слайдер */
 .hero-slider {
     position: relative;
     width: 100%;
-    height: 500px;
+    height: 550px; /* Збільшимо висоту */
     overflow: hidden;
-    margin-bottom: 40px;
-    background-color: #333; /* Можна залишити нейтральним, зображення його перекриває */
+    margin-bottom: 50px;
+    background-color: #000; /* Чорний фон для візуалізації */
 }
 
 .slider-wrapper {
     display: flex;
     width: 100%;
     height: 100%;
-    transition: transform 0.8s ease-in-out;
+    transition: transform 0.8s cubic-bezier(0.25, 0.1, 0.25, 1); /* Більш плавна анімація */
 }
 
 .slide {
@@ -189,8 +209,8 @@ img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: brightness(0.7); /* Щоб текст на слайдах був читабельним */
-    animation: zoomInOut 15s infinite alternate ease-in-out;
+    filter: brightness(0.6) saturate(1.1); /* Трохи темніше та насиченіше */
+    animation: zoomInOut 18s infinite alternate ease-in-out; /* Повільніша і довша анімація */
 }
 
 @keyframes zoomInOut {
@@ -198,78 +218,84 @@ img {
         transform: scale(1);
     }
     100% {
-        transform: scale(1.1);
+        transform: scale(1.15);
     }
 }
 
 .slide-caption {
     position: absolute;
     color: var(--white-color);
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.5); /* Напівпрозорий фон для тексту */
+    padding: 30px; /* Збільшимо відступи */
+    background-color: rgba(0, 0, 0, 0.65); /* Більш непрозорий фон */
     border-radius: var(--border-radius);
-    max-width: 80%;
+    max-width: 70%; /* Зменшимо ширину, щоб краще виділялося */
     opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
+    transform: translateY(30px) scale(0.95); /* Більш виражена початкова анімація */
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    border: 1px solid var(--primary-color); /* Рамка з акцентним кольором */
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.4); /* Неонове світіння */
 }
 
 .slide.active .slide-caption {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
 }
 
 .slide-caption h2 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
-    animation: fadeInDown 1s ease forwards;
+    font-family: var(--font-heading);
+    font-size: 3em; /* Більший шрифт */
+    margin-bottom: 15px;
+    animation: fadeInDown 1.2s ease forwards;
+    text-shadow: 0 0 10px var(--primary-color); /* Світіння для заголовка */
 }
 
 .slide-caption p {
-    font-size: 1.2em;
-    margin-bottom: 20px; /* Додаємо відступ знизу для кнопки */
-    animation: fadeInUp 1s ease forwards;
-    animation-delay: 0.2s;
+    font-size: 1.3em; /* Більший шрифт */
+    margin-bottom: 30px; /* Більший відступ для кнопки */
+    animation: fadeInUp 1.2s ease forwards;
+    animation-delay: 0.3s;
 }
 
 /* СТИЛІ ДЛЯ КНОПКИ СЛАЙДЕРА */
 .slider-button {
     display: inline-block;
-    padding: 12px 25px;
-    background-color: var(--accent-color); /* Використовуємо акцентний колір */
-    color: var(--background-color); /* Текст кнопки буде світлішим, щоб контрастувати */
+    padding: 15px 30px; /* Збільшимо розмір */
+    background-color: var(--accent-color);
+    color: var(--background-color); /* Текст кнопки */
     border-radius: var(--border-radius);
     font-weight: bold;
-    font-size: 1em;
+    font-size: 1.1em;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease;
-    animation: zoomIn 1s ease forwards; /* Анімація появи кнопки */
-    animation-delay: 0.4s;
-    opacity: 0; /* Приховуємо кнопку на початку анімації */
+    letter-spacing: 1.5px;
+    transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    animation: zoomIn 1.2s ease forwards;
+    animation-delay: 0.6s;
+    opacity: 0;
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.5); /* Неонове світіння кнопки */
 }
 
 .slide.active .slider-button {
-    opacity: 1; /* Показуємо кнопку, коли слайд активний */
+    opacity: 1;
 }
 
 .slider-button:hover {
-    background-color: var(--primary-color); /* Зміна кольору при наведенні */
-    transform: translateY(-3px); /* Легкий підйом кнопки */
+    background-color: var(--primary-color);
+    transform: translateY(-5px) scale(1.02); /* Більш виражений ефект підняття */
+    box-shadow: 0 0 25px var(--primary-color); /* Інтенсивніше світіння */
 }
 
 @keyframes zoomIn {
-    from { opacity: 0; transform: scale(0.8); }
+    from { opacity: 0; transform: scale(0.7); }
     to { opacity: 1; transform: scale(1); }
 }
 
 @keyframes fadeInDown {
-    from { opacity: 0; transform: translateY(-20px); }
+    from { opacity: 0; transform: translateY(-40px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(20px); }
+    from { opacity: 0; transform: translateY(40px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
@@ -280,74 +306,81 @@ img {
     display: flex;
     justify-content: space-between;
     transform: translateY(-50%);
-    padding: 0 20px;
+    padding: 0 30px; /* Збільшимо відступи */
 }
 
 .slider-nav button {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.6);
     color: var(--white-color);
-    border: none;
-    padding: 15px 20px;
+    border: 1px solid var(--primary-color); /* Додамо рамку */
+    padding: 18px 25px; /* Більші кнопки */
     cursor: pointer;
-    font-size: 1.5em;
+    font-size: 1.8em; /* Більші іконки */
     border-radius: var(--border-radius);
-    transition: background-color var(--transition-speed) ease;
+    transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.3); /* Легке світіння */
 }
 
 .slider-nav button:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    box-shadow: 0 0 20px var(--primary-color); /* Інтенсивніше світіння */
 }
 
 .slider-dots {
     position: absolute;
-    bottom: 20px;
+    bottom: 30px; /* Опустимо точки */
     left: 50%;
     transform: translateX(-50%);
     display: flex;
 }
 
 .slider-dots .dot {
-    width: 12px;
-    height: 12px;
-    background-color: rgba(255, 255, 255, 0.5);
+    width: 14px; /* Більші точки */
+    height: 14px;
+    background-color: rgba(255, 255, 255, 0.4);
     border-radius: 50%;
-    margin: 0 5px;
+    margin: 0 8px; /* Збільшимо відступ */
     cursor: pointer;
     transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease;
 }
 
 .slider-dots .dot.active {
     background-color: var(--white-color);
-    transform: scale(1.2);
+    transform: scale(1.3); /* Більш виражений розмір активної точки */
+    box-shadow: 0 0 8px var(--primary-color); /* Світіння для активної точки */
 }
 
 /* Секції */
 section {
-    padding: 60px 0;
-    margin-bottom: 20px;
+    padding: 80px 0; /* Збільшимо відступи секцій */
+    margin-bottom: 30px;
     background-color: var(--card-background);
     border-radius: var(--border-radius);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 6px 20px var(--shadow-color); /* Більш глибока тінь */
     transition: background-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    border: 1px solid var(--border-color); /* Чітка рамка */
 }
 
 section h2 {
     text-align: center;
-    font-size: 2.5em;
-    margin-bottom: 40px;
+    font-family: var(--font-heading);
+    font-size: 3.5em; /* Більший шрифт */
+    margin-bottom: 50px;
     color: var(--primary-color);
     position: relative;
     transition: color var(--transition-speed) ease;
+    text-shadow: 0 0 15px var(--primary-color); /* Світіння для заголовків секцій */
 }
 
 section h2::after {
     content: '';
     position: absolute;
-    bottom: -10px;
+    bottom: -15px;
     left: 50%;
     transform: translateX(-50%);
-    width: 80px;
-    height: 3px;
+    width: 100px; /* Ширше підкреслення */
+    height: 4px; /* Товстіше підкреслення */
     background-color: var(--accent-color);
     border-radius: 2px;
     transition: background-color var(--transition-speed) ease;
@@ -356,47 +389,50 @@ section h2::after {
 /* Новини */
 .news-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Трохи більший min-width */
+    gap: 40px; /* Збільшимо проміжки */
 }
 
 .news-item {
     background-color: var(--background-color);
     border-radius: var(--border-radius);
     overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 15px var(--shadow-color);
     transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease, background-color var(--transition-speed) ease;
-    animation: fadeIn 0.8s ease-out forwards;
+    animation: fadeIn 0.9s ease-out forwards;
     opacity: 0;
+    border: 1px solid var(--border-color); /* Рамка */
 }
 
 .news-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+    transform: translateY(-12px) scale(1.02); /* Більш виражений ефект */
+    box-shadow: 0 12px 25px var(--shadow-color);
+    border-color: var(--primary-color); /* Зміна рамки при наведенні */
 }
 
 .news-item img {
     width: 100%;
-    height: 200px;
+    height: 220px; /* Збільшимо висоту зображень */
     object-fit: cover;
 }
 
 .news-content {
-    padding: 20px;
+    padding: 25px; /* Збільшимо відступи */
 }
 
 .news-content h3 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
+    font-family: var(--font-heading);
+    font-size: 1.6em;
+    margin-bottom: 12px;
     color: var(--primary-color);
     transition: color var(--transition-speed) ease;
 }
 
 .news-content p {
-    font-size: 1em;
+    font-size: 1.05em;
     color: var(--secondary-color);
-    margin-bottom: 15px;
-    line-height: 1.5;
+    margin-bottom: 20px;
+    line-height: 1.6;
     transition: color var(--transition-speed) ease;
 }
 
@@ -404,13 +440,17 @@ section h2::after {
     display: inline-block;
     background-color: var(--primary-color);
     color: var(--white-color);
-    padding: 10px 15px;
+    padding: 12px 20px;
     border-radius: var(--border-radius);
-    transition: background-color var(--transition-speed) ease;
+    transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
 .read-more:hover {
     background-color: var(--accent-color);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px var(--accent-color);
 }
 
 /* Про сайт */
@@ -418,24 +458,25 @@ section h2::after {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 30px;
+    gap: 40px; /* Збільшимо проміжок */
 }
 
 .about-image {
     flex: 1;
-    min-width: 300px;
+    min-width: 350px; /* Більший розмір зображення */
     border-radius: var(--border-radius);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    animation: scaleIn 0.8s ease-out forwards;
+    box-shadow: 0 6px 15px var(--shadow-color);
+    animation: scaleIn 0.9s ease-out forwards;
     opacity: 0;
+    border: 1px solid var(--border-color);
 }
 
 .about-content p {
     flex: 2;
-    font-size: 1.1em;
-    line-height: 1.8;
+    font-size: 1.15em;
+    line-height: 1.9;
     color: var(--secondary-color);
-    animation: fadeIn 0.8s ease-out forwards;
+    animation: fadeIn 0.9s ease-out forwards;
     animation-delay: 0.2s;
     opacity: 0;
     transition: color var(--transition-speed) ease;
@@ -444,34 +485,36 @@ section h2::after {
 /* Галерея */
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
 }
 
 .gallery-item {
     position: relative;
     overflow: hidden;
     border-radius: var(--border-radius);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 15px var(--shadow-color);
     cursor: pointer;
     transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
-    animation: slideInUp 0.8s ease-out forwards;
+    animation: slideInUp 0.9s ease-out forwards;
     opacity: 0;
+    border: 1px solid var(--border-color);
 }
 
 .gallery-item:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 10px 20px var(--shadow-color);
 }
 
 .gallery-item img {
     width: 100%;
-    height: 250px;
+    height: 280px; /* Збільшимо висоту */
     object-fit: cover;
-    transition: transform 0.5s ease;
+    transition: transform 0.6s ease;
 }
 
 .gallery-item:hover img {
-    transform: scale(1.05);
+    transform: scale(1.08) brightness(0.8); /* Збільшимо і затемнимо при наведенні */
 }
 
 .gallery-overlay {
@@ -479,11 +522,12 @@ section h2::after {
     bottom: 0;
     left: 0;
     width: 100%;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.85); /* Більш темний оверлей */
     color: var(--white-color);
-    padding: 15px;
+    padding: 20px;
     transform: translateY(100%);
-    transition: transform 0.3s ease;
+    transition: transform 0.4s ease;
+    border-top: 2px solid var(--accent-color); /* Яскрава лінія */
 }
 
 .gallery-item:hover .gallery-overlay {
@@ -491,12 +535,17 @@ section h2::after {
 }
 
 .gallery-overlay h3 {
-    margin-bottom: 5px;
-    font-size: 1.3em;
+    font-family: var(--font-heading);
+    margin-bottom: 8px;
+    font-size: 1.4em;
+    color: var(--primary-color);
+    text-shadow: 0 0 8px var(--primary-color);
 }
 
 .gallery-overlay p {
-    font-size: 0.9em;
+    font-size: 0.95em;
+    line-height: 1.5;
+    color: var(--secondary-color);
 }
 
 /* Контакти */
@@ -504,59 +553,70 @@ section h2::after {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 30px;
+    gap: 40px;
 }
 
 .contact-info {
     flex: 1;
-    min-width: 300px;
+    min-width: 320px;
     background-color: var(--background-color);
-    padding: 30px;
+    padding: 35px;
     border-radius: var(--border-radius);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    animation: fadeInRight 0.8s ease-out forwards;
+    box-shadow: 0 6px 15px var(--shadow-color);
+    animation: fadeInRight 0.9s ease-out forwards;
     opacity: 0;
     transition: background-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    border: 1px solid var(--border-color);
 }
 
 .contact-info p {
-    margin-bottom: 15px;
-    font-size: 1.1em;
+    margin-bottom: 18px;
+    font-size: 1.15em;
     color: var(--text-color);
     transition: color var(--transition-speed) ease;
 }
 
 .contact-info p i {
-    margin-right: 10px;
+    margin-right: 12px;
     color: var(--primary-color);
     transition: color var(--transition-speed) ease;
+    font-size: 1.2em; /* Більші іконки */
 }
 
 .map-container {
     flex: 2;
-    min-width: 400px;
-    height: 450px;
+    min-width: 450px;
+    height: 500px; /* Збільшимо висоту карти */
     border-radius: var(--border-radius);
     overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    animation: fadeInLeft 0.8s ease-out forwards;
+    box-shadow: 0 6px 15px var(--shadow-color);
+    animation: fadeInLeft 0.9s ease-out forwards;
     opacity: 0;
+    border: 1px solid var(--border-color);
 }
 
 .map-container iframe {
     width: 100%;
     height: 100%;
     border: none;
+    transition: filter var(--transition-speed) ease;
+}
+
+/* Стилізація Google Maps для темної теми */
+body.dark-theme .map-container iframe {
+    filter: grayscale(90%) invert(95%) hue-rotate(180deg) saturate(1.5); /* Більш виражений темний, футуристичний ефект */
 }
 
 /* Футер */
 .footer {
-    background-color: var(--text-color);
-    color: var(--background-color);
-    padding: 30px 0;
+    background-color: var(--card-background); /* Змінимо фон футера */
+    color: var(--text-color); /* Колір тексту як основний */
+    padding: 40px 0; /* Збільшимо відступи */
     text-align: center;
-    margin-top: 40px;
+    margin-top: 60px;
     transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+    border-top: 1px solid var(--border-color); /* Чіткий роздільник */
+    box-shadow: 0 -4px 15px var(--shadow-color);
 }
 
 .footer .container {
@@ -566,21 +626,24 @@ section h2::after {
 }
 
 .footer p {
-    margin-bottom: 15px;
-    font-size: 0.9em;
+    margin-bottom: 20px;
+    font-size: 1em;
+    color: var(--secondary-color);
     transition: color var(--transition-speed) ease;
 }
 
 .social-links a {
-    color: var(--background-color);
-    font-size: 1.5em;
-    margin: 0 10px;
+    color: var(--primary-color); /* Колір як акцент */
+    font-size: 1.8em; /* Більші іконки */
+    margin: 0 15px;
     transition: color var(--transition-speed) ease, transform var(--transition-speed) ease;
+    text-shadow: 0 0 10px var(--primary-color);
 }
 
 .social-links a:hover {
-    color: var(--primary-color);
-    transform: translateY(-3px);
+    color: var(--accent-color);
+    transform: translateY(-5px) scale(1.1);
+    text-shadow: 0 0 15px var(--accent-color);
 }
 
 /* Адаптивність (Медіа-запити) */
@@ -635,20 +698,25 @@ section h2::after {
     }
 
     .hero-slider {
-        height: 400px;
+        height: 450px;
+    }
+
+    .slide-caption {
+        max-width: 90%;
+        padding: 25px;
     }
 
     .slide-caption h2 {
-        font-size: 2em;
+        font-size: 2.2em;
     }
 
     .slide-caption p {
-        font-size: 1em;
-        margin-bottom: 15px; /* Забезпечуємо відступ для кнопки на мобільних */
+        font-size: 1.1em;
+        margin-bottom: 20px;
     }
 
     .news-grid, .gallery-grid {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     }
 
     .about-content, .contact-content {
@@ -660,20 +728,28 @@ section h2::after {
         min-width: unset;
         width: 100%;
     }
+
+    section h2 {
+        font-size: 3em;
+    }
 }
 
 /* Для мобільних телефонів (ширина до 768px) */
 @media (max-width: 768px) {
     .header {
-        padding: 10px 0;
+        padding: 15px 0;
     }
 
     .logo img {
-        height: 40px;
+        height: 45px;
     }
 
     .hero-slider {
-        height: 300px;
+        height: 350px;
+    }
+
+    .slide-caption {
+        padding: 20px;
     }
 
     .slide-caption h2 {
@@ -681,22 +757,27 @@ section h2::after {
     }
 
     .slide-caption p {
+        font-size: 0.95em;
+        margin-bottom: 15px;
+    }
+
+    .slider-button {
+        padding: 10px 20px;
         font-size: 0.9em;
-        margin-bottom: 10px; /* Трохи менший відступ для кнопки на дуже малих екранах */
     }
 
     .slider-nav button {
-        padding: 10px 15px;
-        font-size: 1.2em;
+        padding: 12px 18px;
+        font-size: 1.4em;
     }
 
     section {
-        padding: 40px 0;
+        padding: 50px 0;
     }
 
     section h2 {
-        font-size: 2em;
-        margin-bottom: 30px;
+        font-size: 2.5em;
+        margin-bottom: 35px;
     }
 
     .news-grid, .gallery-grid {
@@ -704,40 +785,36 @@ section h2::after {
     }
 
     .contact-info, .map-container {
-        height: 300px;
+        height: 350px;
     }
 
     .footer {
-        padding: 20px 0;
+        padding: 25px 0;
     }
 
     .theme-toggle {
         right: 60px;
-        font-size: 1.3em;
+        font-size: 1.5em;
     }
 
     .burger-menu {
         right: 15px;
+        font-size: 1.7em;
+    }
+
+    .gallery-item img {
+        height: 220px;
     }
 }
 
 /* Анімація для прокрутки (Fade-in on scroll) */
 .animate-on-scroll {
     opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    transform: translateY(30px); /* Більш виражений ефект */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Повільніше */
 }
 
 .animate-on-scroll.in-view {
     opacity: 1;
     transform: translateY(0);
-}
-
-/* Анімація для Google Maps */
-.map-container iframe {
-    transition: filter var(--transition-speed) ease;
-}
-
-body.dark-theme .map-container iframe {
-    filter: grayscale(80%) invert(90%);
 }
