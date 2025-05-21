@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Вплив технологій на світ</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+  <style>
+    body {
+      transition: background-color 0.4s ease, color 0.4s ease;
+    }
+    .news-item, .gallery-grid img, .footer, .header, .menu a {
+      transition: background-color 0.4s ease, color 0.4s ease;
+    }
+  </style>
+</head>
+<body>
+  <!-- Theme Toggle Button -->
+  <button id="themeToggle" class="theme-toggle" aria-label="Перемкнути тему">
+    <i class="fas fa-moon"></i>
+  </button>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <img src="images/logow.png" alt="Логотип" class="logo" aria-label="Логотип">
+      <h1>Вплив технологій на світ</h1>
+    </div>
+  </header>
+
+  <!-- Menu -->
+  <nav class="menu">
+    <a href="#about">Про сайт</a>
+    <a href="#gallery">Галерея картинок</a>
+    <a href="#news">Новини</a>
+    <a href="#contacts">Контакти</a>
+  </nav>
+
+  <!-- Slider -->
+  <section class="slider-section">
+    <div class="slider">
+      <div><img src="images/slide1.jpg" alt="Слайд 1: Технології у медицині"></div>
+      <div><img src="images/slide2.jpg" alt="Слайд 2: Розумне місто"></div>
+      <div><img src="images/slide3.jpg" alt="Слайд 3: Інновації у транспорті"></div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="about-section">
+    <h2>Про сайт</h2>
+    <p>Цей портал присвячений сучасним технологіям та їх впливу на наше повсякденне життя, освіту, медицину, транспорт та інші галузі.</p>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery" class="gallery-section">
+    <h2>Галерея картинок</h2>
+    <div class="gallery-grid">
+      <img src="gallery/image1.jpg" alt="Галерея 1: Робототехніка">
+      <img src="gallery/image2.jpg" alt="Галерея 2: Біотехнології">
+      <img src="gallery/image3.jpg" alt="Галерея 3: Енергетика">
+      <img src="gallery/image4.jpg" alt="Галерея 4: Космічні технології">
+    </div>
+  </section>
+
+  <!-- News -->
+  <section id="news" class="news-section">
+    <h2>Головні новини</h2>
+    <div class="news-grid">
+      <div class="news-item">AI revolutionizes healthcare diagnostics</div>
+      <div class="news-item">Quantum computing milestones reached</div>
+      <div class="news-item">5G transforming smart cities</div>
+      <div class="news-item">Wearable tech advancing rapidly</div>
+      <div class="news-item">SpaceX launches new satellite fleet</div>
+      <div class="news-item">Blockchain adoption increases in finance</div>
+      <div class="news-item">Green energy innovations in tech</div>
+      <div class="news-item">Rise of autonomous vehicles</div>
+      <div class="news-item">Cybersecurity challenges in 2025</div>
+      <div class="news-item">Biotech and genetics breakthroughs</div>
+    </div>
+  </section>
+
+  <!-- Contacts -->
+  <section id="contacts" class="contacts-section">
+    <h2>Контакти</h2>
+    <div class="contact-info">
+      <i class="fas fa-map-marker-alt"></i> м. Київ, Україна
+    </div>
+    <div class="map-container">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18..." width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    &copy; 2025 Вплив технологій на світ. Всі права захищені.
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script src="scripts.js"></script>
+</body>
+</html>
